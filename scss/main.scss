@@ -1,0 +1,363 @@
+@import "config";
+
+body {
+  font-size: 16px;
+  font-family: "Karla", sans-serif;
+}
+// font-family: 'DM Serif Display', serif;
+// font-family: 'Karla', sans-serif;
+a {
+  transition: all ease 0.3s;
+  text-decoration: none;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "DM Serif Display", serif;
+}
+.btn {
+  padding: 0.6rem 1.5rem;
+  background: transparent;
+  border: #fff solid 2px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  z-index: 2;
+  &:hover {
+    background: #fff;
+
+    color: $VeryDarkViolet;
+  }
+}
+// header
+
+header {
+  .head {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    padding: 1.8rem 0;
+    justify-content: space-between;
+    .logo {
+      cursor: pointer;
+    }
+    .toggle {
+      display: none;
+      cursor: pointer;
+    }
+    nav {
+      .link {
+        color: $DarkGrayishViolet;
+        margin-left: 1.2rem;
+        text-transform: uppercase;
+        &:hover {
+          color: $VeryDarkViolet;
+        }
+      }
+      .btn {
+        color: $VeryDarkViolet;
+        border: $VeryDarkViolet 2px solid;
+
+        &:hover {
+          background: $VeryDarkViolet;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  header {
+    .head {
+      width: 90%;
+      padding: 1.6rem 0;
+      .logo {
+        height: 20px;
+      }
+      nav {
+        position: absolute;
+        top: 80px;
+        height: 0;
+        left: 0;
+        right: 0;
+        background: $VeryDarkViolet;
+        transition: all 0.5s ease;
+        z-index: 88;
+        overflow: hidden;
+        .links {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+
+          .link {
+            margin: 2.5rem 2rem 0;
+            color: #fff;
+            font-size: 1.4rem;
+          }
+          .btn {
+            border: 2px solid #fff !important;
+          }
+        }
+      }
+      .toggle {
+        display: block;
+      }
+    }
+  }
+}
+// hero-section
+.right {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  z-index: 1;
+}
+.left {
+  position: absolute;
+  top: 450px;
+  left: 0;
+  z-index: -1;
+}
+.hero-section {
+  position: relative;
+  z-index: 0;
+  height: 650px;
+  background: $DarkViolet;
+  color: #fff;
+  margin-bottom: 400px;
+  .container {
+    height: 100%;
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    img {
+      transform: translateY(130px);
+    }
+  }
+  h1 {
+    font-size: 5rem;
+    font-weight: 400;
+    line-height: 1;
+  }
+  p {
+    line-height: 1.5;
+    margin: 2rem 0;
+  }
+  .text-div {
+    margin-right: 2rem;
+  }
+}
+
+@media (max-width: 1130px) {
+  .hero-section {
+    .container {
+      width: 90%;
+    }
+    h1 {
+      font-size: 3.5rem;
+    }
+    img {
+      height: 400px;
+      transform: translateY(0) !important;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-section {
+    height: auto;
+    margin-bottom: 150px;
+    .container {
+      flex-direction: column-reverse;
+      .text-div {
+        text-align: center;
+        margin: 5rem 0;
+      }
+    }
+    img {
+      height: auto;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .right {
+    top: 800px;
+  }
+}
+
+// features-section
+
+.features-section {
+  width: 80%;
+  margin: auto;
+  h2 {
+    font-size: 4rem;
+    color: $DarkViolet;
+    font-weight: 400;
+  }
+  .grid {
+    margin: 5rem 0;
+    display: grid;
+    grid-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    .feature {
+      h3 {
+        font-size: 1.4rem;
+        margin: 1rem 0;
+        color: $DarkViolet;
+      }
+      p {
+        line-height: 1.3;
+        color: $GrayishBlue;
+      }
+    }
+  }
+
+  .container {
+    width: 100%;
+    background: $DarkViolet;
+    min-height: 200px;
+    max-height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+    overflow: hidden;
+    position: relative;
+    picture {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+    h2 {
+      color: #fff;
+      width: 50%;
+      font-size: 3rem;
+    }
+    .btn {
+    }
+  }
+}
+
+@media (max-width: 1130px) {
+  .features-section {
+    width: 90%;
+  }
+}
+@media (max-width: 886px) {
+  .features-section {
+    text-align: center;
+    .container {
+      flex-direction: column;
+      padding: 0 2rem;
+      h2 {
+        width: 100%;
+        margin: 3rem 0 2rem;
+      }
+      .btn {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}
+@media (max-width: 500px) {
+  .features-section {
+    h2 {
+      font-size: 3rem;
+    }
+    .container {
+      h2 {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+
+// footer
+
+footer {
+  margin-top: 4rem;
+  background: hsl(0, 47%, 97%);
+  position: relative;
+  z-index: 0;
+  picture {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .top {
+    display: flex;
+    justify-content: space-between;
+    padding: 3rem 0;
+    border-bottom: 1px solid hsl(0, 0%, 90%);
+    .social-links {
+      a {
+        margin-right: 1rem;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+  .footer-links {
+    padding: 3rem 0;
+    display: flex;
+    z-index: 2;
+    text-transform: uppercase;
+
+    h3 {
+      color: $DarkGrayishViolet;
+      margin-bottom: 3rem;
+      font-weight: 400;
+      font-family: "Karla", sans-serif;
+    }
+    .links {
+      display: flex;
+      flex-direction: column;
+    }
+    .link {
+      color: #000;
+      margin-bottom: 1rem;
+      font-weight: 700;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.attribution {
+  text-align: center;
+  a {
+    color: #000;
+  }
+}
+
+@media (max-width: 768px) {
+  .attribution {
+    font-size: 12px;
+  }
+  .top {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .logo {
+      margin-bottom: 2rem;
+    }
+  }
+  .footer-links {
+    flex-direction: column;
+
+    text-align: center;
+  }
+}
