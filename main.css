@@ -14,7 +14,11 @@ a {
   transition: all ease 0.3s;
   text-decoration: none;
 }
-
+a:focus {
+  outline: none;
+  background-color: #651787;
+  color: #fff !important;
+}
 h1,
 h2,
 h3,
